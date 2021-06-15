@@ -6,12 +6,12 @@ using System.Threading.Tasks;
 
 namespace SerialPortAssistance
 {
-    public class RingBuffer
+    public class RingBuffer<T>
     {
         private int head;
         private int tail;
         private int size;
-        private byte[] buffer;
+        private T[] buffer;
         private int remain;
         
         public RingBuffer(int size)
@@ -19,11 +19,11 @@ namespace SerialPortAssistance
             this.size = size;
             this.head = 0;
             this.tail = 0;
-            this.buffer = new byte[size];
+            this.buffer = new T[size];
             this.remain = size;
         }
 
-        public void Push(byte[] data, int offset, int size)
+        public void Push(T[] data, int offset, int size)
         {
             //如果剩余的空间足够装下新数据
             if (this.remain >= size)
@@ -56,7 +56,7 @@ namespace SerialPortAssistance
             }
         }
 
-        public void Pop(byte[] data, int offset, int size)
+        public void Pop(T[] data, int offset, int size)
         {
             for (int i = 0; i < size; i++)
             {
