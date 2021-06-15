@@ -55,7 +55,7 @@ namespace SerialPortAssistance
                 int channelNumber = buf[7] & 0x07;
                 if (channelNumber == lastChannelNumber)
                 {
-                    int value = Int32.Parse()
+                    int value = Int32.Parse().
                 }
 
                 lastChannelNumber++;
