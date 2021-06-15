@@ -1,0 +1,10 @@
+D:\workspace\SerialPortAssistance\bin\Debug\SerialPortAssistance.exe.config
+D:\workspace\SerialPortAssistance\bin\Debug\SerialPortAssistance.exe
+D:\workspace\SerialPortAssistance\bin\Debug\SerialPortAssistance.pdb
+D:\workspace\SerialPortAssistance\obj\Debug\SerialPortAssistance.csprojAssemblyReference.cache
+D:\workspace\SerialPortAssistance\obj\Debug\SerialPortAssistance.Form1.resources
+D:\workspace\SerialPortAssistance\obj\Debug\SerialPortAssistance.Properties.Resources.resources
+D:\workspace\SerialPortAssistance\obj\Debug\SerialPortAssistance.csproj.GenerateResource.cache
+D:\workspace\SerialPortAssistance\obj\Debug\SerialPortAssistance.csproj.CoreCompileInputs.cache
+D:\workspace\SerialPortAssistance\obj\Debug\SerialPortAssistance.exe
+D:\workspace\SerialPortAssistance\obj\Debug\SerialPortAssistance.pdb
