@@ -17,7 +17,7 @@ namespace SerialPortAssistance
     {
         static FileStream fileStream;
         static uint count = 0;
-        static int lastChannelNumber = 0;
+        static int lastChannelNumber = -1;
         //static uint 
         public Form1()
         {
@@ -52,7 +52,13 @@ namespace SerialPortAssistance
             //如果格式正确
             if (buf[8] == '\n')
             {
+                int value = Int32.Parse(str);
                 int channelNumber = buf[7] & 0x07;
+                
+                if (lastChannelNumber == -1)
+                {
+                    lastChannelNumber = channelNumber;
+                }
                 if (channelNumber == lastChannelNumber)
                 {
                     //int value = Int32.Parse();
