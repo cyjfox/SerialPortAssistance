@@ -13,6 +13,7 @@ namespace SerialPortAssistance
         private int size;
         private T[] buffer;
         private int remain;
+        private int dataSize;
         
         public RingBuffer(int size)
         {
@@ -21,8 +22,11 @@ namespace SerialPortAssistance
             this.tail = 0;
             this.buffer = new T[size];
             this.remain = size;
+            this.dataSize = 0;
         }
 
+
+        //一次装的数据不能大于整个缓冲区大小
         public void Push(T[] data, int offset, int size)
         {
             //如果剩余的空间足够装下新数据
@@ -54,8 +58,10 @@ namespace SerialPortAssistance
                 this.tail = size - this.remain;
                 this.remain = this.size - this.tail;
             }
+            this.dataSize += size;
         }
 
+        //一次读取的数据不能大于整个缓冲区大小
         public void Pop(T[] data, int offset, int size)
         {
             for (int i = 0; i < size; i++)
@@ -64,7 +70,32 @@ namespace SerialPortAssistance
             }
 
             this.head = (this.head + size) % this.size;
+
+            this.dataSize -= size;
         }
 
+        public int Head
+        {
+            get
+            {
+                return this.head;
+            }
+        }
+
+        public int Tail
+        {
+            get
+            {
+                return this.tail;
+            }
+        }
+
+        public int DataSize
+        {
+            get
+            {
+                return this.dataSize;
+            }
+        }
     }
 }
